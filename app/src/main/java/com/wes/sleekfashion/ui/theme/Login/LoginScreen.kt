@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.wes.sleekfashion.data.AuthViewModel
+import com.wes.sleekfashion.navigation.ROUTE_MAIN_PRODUCTS_SCREEN
 import com.wes.sleekfashion.navigation.ROUTE_REGISTER
 
 //import com.wes.myapp.data.AuthViewModel
@@ -70,9 +71,9 @@ fun LoginScreen(navController: NavController){
         )
         Spacer(modifier = Modifier.height(20.dp))
 
-        Button(onClick = {
+        Button(onClick = {navController.navigate(ROUTE_MAIN_PRODUCTS_SCREEN)
             val mylogin= AuthViewModel(navController, context )
-//            mylogin.login(email.text.trim(),pass.text.trim())
+//            mylogin.login(email.text.trim(),pass.text.trim()),
         }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Log In")
         }

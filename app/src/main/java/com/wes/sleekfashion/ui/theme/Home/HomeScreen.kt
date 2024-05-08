@@ -9,13 +9,17 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -32,41 +36,46 @@ import com.wes.sleekfashion.navigation.ROUTE_REGISTER
      Column (
          modifier = Modifier
              .fillMaxSize()
-             .background(Color.White)
-         
+             .background(Color.White),
+
      ){
-        Box (
-            modifier = Modifier.fillMaxHeight(0.7f)
+         Box (modifier = Modifier.fillMaxHeight(0.78f)) {
+             Image(
+                 painter = painterResource(id = R.drawable.pic),
+                 contentDescription = "home",
+                 contentScale = ContentScale.FillBounds,
+
+             )}
+         Text(text = "Discover your Style With" ,
+                 color = Color.Black,
+                 fontSize = 30.sp,
+                 textAlign = TextAlign.Center)
+             Text(text = "Sleek Fashion",
+                 color = Color.Yellow,
+                 fontSize = 30.sp)
+
+             Spacer(modifier = Modifier.height(5.dp))
+             Button(onClick = {navController.navigate(ROUTE_LOGIN) }, modifier = Modifier.fillMaxWidth()
+             ){
+                 Text(text = "Get Started")
+             }
+             Spacer(modifier = Modifier.height(5.dp))
+             Button(onClick = { navController.navigate(ROUTE_REGISTER) },
+                 modifier = Modifier.fillMaxWidth()
+
+             ){
+                 Text(text = "Don't Have an account? Register Today")
+             }
 
 
-            
-        ){
-            Image(painter = painterResource(id = R.drawable.home) , 
-                contentDescription = "home",
-                contentScale = ContentScale.FillBounds)
-        } 
-         Text(text = "Discover your Style With" , 
-             color = Color.Black,
-             fontSize = 30.sp,
-            textAlign = TextAlign.Center)
-         Text(text = "Sleek Fashion", 
-             color = Color.Yellow,
-             fontSize = 30.sp)
-         Button(onClick = {navController.navigate(ROUTE_LOGIN) }, modifier = Modifier.fillMaxWidth()
-         ){
-             Text(text = "Get Started")
+
+
          }
-         Spacer(modifier = Modifier.height(5.dp))
-         Button(onClick = { navController.navigate(ROUTE_REGISTER) },
-             modifier = Modifier.fillMaxWidth()
 
-         ){
-             Text(text = "Don't Have an account? Register Today")
-         }
 
      }
      
- }
+
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HomeScreenPreview(){
