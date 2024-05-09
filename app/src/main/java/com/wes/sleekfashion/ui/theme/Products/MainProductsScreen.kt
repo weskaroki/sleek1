@@ -59,10 +59,17 @@ fun MAINProductScreen(navController: NavController){
         Navbar()
         Spacer(modifier = Modifier.height(10.dp))
         ImageCard(
-            painter = painterResource(id = R.drawable.children
+            painter = painterResource(id = R.drawable.child
             ),
             contentDescription = "mycard",
-            title = "Children"
+            title = "Children's Collection"
+        )
+        Spacer(modifier = Modifier.height(5.dp))
+        ImageCard2(
+            painter2 = painterResource(id = R.drawable.ladyy
+            ),
+            contentDescription2 = "mycard2",
+            title2 = "Ladies Collection"
         )
 
 
@@ -74,7 +81,7 @@ fun ImageCard(painter: Painter, contentDescription: String, title: String) {
 
 
         Card(
-            modifier = Modifier.fillMaxWidth(0.8f)
+            modifier = Modifier.fillMaxWidth()
                 .wrapContentWidth(),
             shape = RoundedCornerShape(15.dp),
             elevation = CardDefaults.cardElevation(20.dp)
@@ -106,6 +113,45 @@ fun ImageCard(painter: Painter, contentDescription: String, title: String) {
         }
     }
 }
+@Composable
+fun ImageCard2(painter2: Painter, contentDescription2: String, title2: String) {
+    Column() {
+
+
+        Card(
+            modifier = Modifier.fillMaxWidth()
+                .wrapContentWidth(),
+            shape = RoundedCornerShape(15.dp),
+            elevation = CardDefaults.cardElevation(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.height(200.dp)
+            ) {
+                Image(
+                    painter = painter2,
+                    contentDescription = contentDescription2,
+                    contentScale = ContentScale.Crop
+                )
+                Box(
+                    modifier = Modifier
+                        .matchParentSize()
+                        .padding(15.dp),
+                    contentAlignment = Alignment.BottomStart
+
+                ) {
+                    Text(
+                        text = title2,
+                        fontSize = 20.sp,
+                        color = Color.DarkGray,
+
+                        )
+
+                }
+            }
+        }
+    }
+}
+
 
 
 

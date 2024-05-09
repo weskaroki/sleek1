@@ -36,7 +36,7 @@ import com.wes.sleekfashion.navigation.ROUTE_REGISTER
      Column (
          modifier = Modifier
              .fillMaxSize()
-             .background(Color.White),
+             .background(Color.DarkGray),
 
      ){
          Box (modifier = Modifier.fillMaxHeight(0.78f)) {
@@ -47,7 +47,7 @@ import com.wes.sleekfashion.navigation.ROUTE_REGISTER
 
              )}
          Text(text = "Discover your Style With" ,
-                 color = Color.Black,
+                 color = Color.White,
                  fontSize = 30.sp,
                  textAlign = TextAlign.Center)
              Text(text = "Sleek Fashion",
@@ -58,13 +58,6 @@ import com.wes.sleekfashion.navigation.ROUTE_REGISTER
              Button(onClick = {navController.navigate(ROUTE_LOGIN) }, modifier = Modifier.fillMaxWidth()
              ){
                  Text(text = "Get Started")
-             }
-             Spacer(modifier = Modifier.height(5.dp))
-             Button(onClick = { navController.navigate(ROUTE_REGISTER) },
-                 modifier = Modifier.fillMaxWidth()
-
-             ){
-                 Text(text = "Don't Have an account? Register Today")
              }
 
 

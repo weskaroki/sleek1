@@ -40,16 +40,19 @@ class LazyColumnActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val students = listOf("John","Wick","wes","Ivy","chloe",
+                    val students = listOf(
+                        Image(painter = painterResource(id = R.drawable.pexels),
+                            contentDescription = "image"
+                        ),"Wick","wes","Ivy","chloe",
                         "kevin","Fay","Alice","foden","Haaland","Grace")
-                    LazyHome(students)
+                    LazyHome(students:List<>)
                 }
             }
         }
     }
 }
 @Composable
-fun LazyHome(students:List<String>){
+fun LazyHome(students:List<Any>){
     Box (modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(id = R.drawable.na) , 
@@ -68,7 +71,7 @@ fun LazyHome(students:List<String>){
     }
 }
 @Composable
-fun ColumnCard(name:String){
+fun ColumnCard(name:Any){
     Card(modifier = Modifier
         .padding(10.dp)
         .fillMaxWidth()
